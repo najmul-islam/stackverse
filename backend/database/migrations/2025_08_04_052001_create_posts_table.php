@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('excerpt');
             $table->longText('content');
             $table->enum('status', ['draft', 'publish', 'archived'])->default('draft');
-            $table->string('featured_image');
+            $table->string('featured_image')->nullable();
             $table->timestamps();
 
             $table->foreignId('user_id')->constrained('users')->nullOnDelete();

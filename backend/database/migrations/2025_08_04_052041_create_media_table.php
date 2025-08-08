@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('file_name');
             $table->string('file_path');
-            $table->string('mime_type')->nullable();
             $table->unsignedBigInteger('file_size')->nullable();
+            $table->string('mime_type')->nullable();
             $table->string('media_type')->nullable();
             $table->string('title')->nullable();
             $table->text('caption')->nullable();

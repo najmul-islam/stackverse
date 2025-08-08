@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use PhpParser\Node\Expr\FuncCall;
 
 class Tag extends Model
 {
@@ -34,5 +33,10 @@ class Tag extends Model
                 $tag->slug = Str::slug($tag->name);
             }
         });
+    }
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class);
     }
 }
